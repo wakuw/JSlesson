@@ -44,7 +44,10 @@ console.log(playList[1].favorites[1]);
 
 //Q5
 // ⁼とは「代入」
-let sum = playList[0].age + playList[1].age + playList[2].age;
+let sum =0;
+for(let i =0; i<playList.length; i++){
+  sum += playList[i].age;
+}
 let ave = sum / playList.length
 console.log(ave)
 
@@ -67,8 +70,10 @@ difine1();
 
 //Q7
 user.birthday = '2000-09-27';
-user.sayHello = 'Hello!';
-console.log(user.sayHello);
+user.sayHello = function(){
+  console.log('Hello!');
+}
+user.sayHello()
 
 
 //Q8
@@ -116,7 +121,7 @@ console.log(`${x}を${y}で割った余りは${remainder(x,y)}です。`)
 
 //JS_lesson_section6
 //Q1
-let ramdom = Math.floor(Math.random()*9);
+let ramdom = Math.floor(Math.random()*10);
 console.log(ramdom);
 
 
@@ -128,27 +133,27 @@ setTimeout(hello,3000);
 
 
 //Q3
-let num = 5;
-if(num >= 0){
+let num = 0;
+if(num > 0){
   console.log(`num is greater than 0`);
-}else if (num <= 0){
+}else if (num < 0){
   console.log(`num is less than 0`);
-}else if(num = 0){
+}else{
   console.log(`num is 0`);
 };
 
 
 //Q4
-let numbers =0;
+let numbers =[];
 for(let i =0; i <= 99; i++){
-  numbers+= i;
+  numbers.push(i)
 };
 console.log(numbers)
 
 
 //Q5
 let mixed = [4,'2',5,'8','9',0,1];
-for(let i =0; i<=mixed.length; i++){
+for(let i =0; i<mixed.length; i++){
   let value = mixed[i];
   if(typeof value === 'number'){
     if(value % 2 === 0){
